@@ -58,5 +58,11 @@ function clearMarkers() {
     }
     markers = [];
 }
+<<<<<<< HEAD
 
 google.maps.event.addDomListener(window, 'load', initMap);
+=======
+$(document).ready(function(){
+    getDataFromServer();
+});
+>>>>>>> ec2cb9d7f8f201e7806b58f7489e11ce237d38b7
