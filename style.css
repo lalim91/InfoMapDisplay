@@ -1,4 +1,46 @@
-#googleMap {
-    width:700px;
-    height:480px;
+body{
+    background-color: cornflowerblue;
 }
+p{
+    color: white;
+    font-size: 500%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+button{
+    width: 45%;
+    display: inline-block;
+    height: 80px;
+}
+img{
+    width: 22vw;
+    height: 22vw;
+    margin: auto;
+    display: inline-block;
+}
+#quiz, #forgetIt{
+    height: 100vh;
+}
+#quiz{
+    background-color: #515151;
+}
+#forgetIt{
+    background-color: #7689A9;
+}
+#quizBody {
+    background-color: initial;
+}
+.sidenav {
+    height: 100vh;
+    background-color: black;
+}
+#quizMain {
+    background-color:black;
+    height:100vh;
+
+}
+#quizSection {
+    text-align:center;
+    color:white;
+}
+#quiz
