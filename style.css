@@ -47,6 +47,8 @@ img{
 }
 #quizQuestion {
     height: 5vh;
+    font-size: 20%;
+    font-family:"Arial Narrow";
 }
 #radio {
     position:relative;
