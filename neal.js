@@ -1,15 +1,27 @@
-var dummy = [{question: "do you like dan", weight: 50, path: "front", answer: null}];
 
 function dynamicShow(q){
-    this.questions  = q;
+    var self = this;
+    var questions  = q;
+    var index = 0;
 
-    this.
-    $("<div>"{
-        text: dummmy.question
+    this.next = function(){
+        if(index < questions.length){
+            $("#quizQuestion").empty();
+            append(questions[index].questions);
+            index++;
+        }
+        else if(index == questions.length){
+            console.log("activate paul function");
+        }
+    };
+    function append(q){
+        var current = $("<div>",{
+            text: q
+        });
 
-    });
-
-    $("#target")
-
-
+        $("#quizQuestion").append(current);
+    }
 }
+
+var dummy = [{question: "do you like dan", weight: 50, path: "front", answer: null}];
+var quizshow = new dynamicShow(questionArray);
