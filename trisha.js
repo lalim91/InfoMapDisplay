@@ -1,7 +1,7 @@
 //var marker;
 //
 //function initialize() {
-//    var mapProp = {
+git //    var mapProp = {
 //        center: new google.maps.LatLng(33.6694, -117.8231),
 //        zoom: 7,
 //        mapTypeId: google.maps.MapTypeId.ROADMAP
