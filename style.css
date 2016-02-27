@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-#googleMap {
-    width:700px;
-    height:480px;
-}
-=======
 body{
     background-color: cornflowerblue;
 }
@@ -33,4 +27,20 @@ img{
 #forgetIt{
     background-color: #7689A9;
 }
->>>>>>> ec2cb9d7f8f201e7806b58f7489e11ce237d38b7
+#quizBody {
+    background-color: initial;
+}
+.sidenav {
+    height: 100vh;
+    background-color: black;
+}
+#quizMain {
+    background-color:black;
+    height:100vh;
+
+}
+#quizSection {
+    text-align:center;
+    color:white;
+}
+#quiz
