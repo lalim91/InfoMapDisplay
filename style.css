@@ -35,14 +35,20 @@ img{
     background-color: black;
 }
 #quizMain {
-    background-color:black;
+    /*background-color:black;*/
     height:100vh;
+    border:1px solid black;
 
 }
 #quizSection {
     text-align:center;
-    color:white;
+    width:100%;
+    /*color:white;*/
 }
 #quizQuestion {
-
+    height: 5vh;
+}
+#radio {
+    position:relative;
+    margin:auto;
 }

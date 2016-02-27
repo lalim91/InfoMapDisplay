@@ -2,7 +2,7 @@
  * Created by Lalim on 2/27/16.
  */
 var questionArray = [];
-function quizGenerator (name){
+function quizGenerator (){
 
     this.makequestions= function(questions,weight,path){
         this.questions = questions;
