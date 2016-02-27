@@ -1,4 +1,4 @@
-# Information Map Visualization 
+# Back or Front
 C7 Home Hack-a-thon Project 
 
 ###Timeframe:
@@ -20,4 +20,4 @@ C7 Home Hack-a-thon Project
 
 
 ###Description
-This project is a map visualization of California's water. This can include: consumption, rainfall, and other statistics.
+This project is to help future LearningFuze cohorts decide whether to go to front-end or back-end.
