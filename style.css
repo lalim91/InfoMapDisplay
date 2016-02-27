@@ -45,12 +45,23 @@ img{
     width:100%;
     /*color:white;*/
 }
-#quizQuestion {
+#quizQuestion > div {
     height: 5vh;
-    font-size: 20%;
+    font-size: 3vh;
     font-family:"Arial Narrow";
 }
 #radio {
     position:relative;
     margin:auto;
+    font-size:20%;
+}
+.radio-inline{
+    font-size: 3vh;
+}
+#next {
+    position: relative;
+    top: 75vh;
+    left: 40%;
+    font-size: 2vh;
+    width: 6vw;
 }
