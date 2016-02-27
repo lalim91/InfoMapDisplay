@@ -5,7 +5,7 @@ var view = new view();
 var controller = new controller();
 
 function model() {
-    this.listOfQuestions = [];
+    this.listOfQuestions = [{}];
     this.frontEnd = 0;
     this.backEnd = 0;
 
