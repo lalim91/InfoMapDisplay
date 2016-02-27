@@ -72,5 +72,4 @@ function controller() {
 }
 
 $(document).ready(function() {
-    model.addQuestion();
 });
