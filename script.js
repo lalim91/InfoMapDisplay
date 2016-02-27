@@ -24,9 +24,14 @@ function quizGenerator (){
         questionArray.push(this);
     }
 }
+
 var quiz = new quizGenerator();
 
-new quiz.makequestions('What was your experience with JavaScript?',45,'back');
-new quiz.makequestions('Do you like analogies and metaphors?',50,'back');
-new quiz.makequestions('Do you like working with groups?',50,'front');
-new quiz.makequestions('Do you enjoy CSS and Bootstrap?',45,'front');
+function qMake(text, num, path){
+    new quiz.makequestions(text, num, path);
+}
+qMake('What was your experience with JavaScript?',45,'back');
+qMake('Do you like analogies and metaphors?',50,'back');
+qMake('Do you like working with groups?',50,'front');
+qMake('Do you enjoy CSS and Bootstrap?',45,'front');
+
