@@ -9,7 +9,6 @@ function getDataFromServer(){
         }
     })
 }
-
 $(document).ready(function(){
     getDataFromServer();
 });
