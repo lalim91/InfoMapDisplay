@@ -14,6 +14,9 @@ function dynamicShow(q){
             console.log("activate paul function");
         }
     };
+    this.current = function(){
+        return q[index];
+    };
     function append(q){
         var current = $("<div>",{
             text: q
