@@ -47,7 +47,7 @@ function view() {
     this.showNewQuestion = function(){
         if (model.index < model.listOfQuestions.length) {
             $("#quizQuestion").empty();
-            this.appendQuestion(model.listOfQuestions[model.index].questions);
+            this.appendQuestion(model.listOfQuestions[model.index].question);
         }
         else {
             console.log("You should pick this path!");
@@ -55,11 +55,11 @@ function view() {
     };
 
     this.appendQuestion = function(questionToShow){
-        var current = $("<div>",{
+        var div = $("<div>",{
             text: questionToShow
         });
 
-        $("#quizQuestion").append(current);
+        $("#quizQuestion").append(div);
     };
 }
 
