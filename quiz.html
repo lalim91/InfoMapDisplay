@@ -28,24 +28,27 @@
         <div class="row content">
             <div class="col-sm-3 sidenav"></div>
             <div id='quizMain' class="col-sm-6">
-                <div id='quizSection'>
-                    <span id="quizQuestion"></span>
-                    <div class="container">
-                        <form>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">Yes
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">Meh
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">No
-                            </label>
-                        </form>
-                    </div>
+                <div id='quizSection container' id="radio">
+
+                    <div id="quizQuestion"></div>
+                    <form>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">Meh
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">No
+                        </label>
+                    </form>
+
+                    <button id='next' type="button" class="btn btn-small btn-info">Next</button>
+
                 </div>
             </div>
-            <div class="col-sm-3 sidenav"></div>
+            <div class="col-sm-3 sidenav">
+            </div>
         </div>
     </div>
 </body>

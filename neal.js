@@ -1,7 +1,6 @@
 
-function dynamicShow(q){
+function dynamicShow(questions){
     var self = this;
-    var questions  = q;
     var index = 0;
 
     this.next = function(){
@@ -15,11 +14,11 @@ function dynamicShow(q){
         }
     };
     this.current = function(){
-        return q[index];
+        return questions[index];
     };
-    function append(q){
+    function append(text){
         var current = $("<div>",{
-            text: q
+            text: text
         });
 
         $("#quizQuestion").append(current);
@@ -28,3 +27,7 @@ function dynamicShow(q){
 
 var dummy = [{question: "do you like dan", weight: 50, path: "front", answer: null}];
 var quizshow = new dynamicShow(questionArray);
+
+function clickAnswer(){
+
+}
