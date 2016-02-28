@@ -39,14 +39,28 @@ function model() {
 
     this.frontEnd = 0;
     this.backEnd = 0;
+    this.index = 0;
 
-    this.addQuestion = function() {
-
-    };
 }
 
 function view() {
+    this.showNewQuestion = function(){
+        if (model.index < model.listOfQuestions.length) {
+            $("#quizQuestion").empty();
+            this.appendQuestion(model.listOfQuestions[model.index].questions);
+        }
+        else {
+            console.log("You should pick this path!");
+        }
+    };
 
+    this.appendQuestion = function(questionToShow){
+        var current = $("<div>",{
+            text: questionToShow
+        });
+
+        $("#quizQuestion").append(current);
+    };
 }
 
 function controller() {
@@ -72,4 +86,11 @@ function controller() {
 }
 
 $(document).ready(function() {
+    view.showNewQuestion();
+
+    $('#next').click(function() {
+        controller.addToPath(model.listOfQuestions[model.index]);
+        model.index++;
+        view.showNewQuestion();
+    });
 });

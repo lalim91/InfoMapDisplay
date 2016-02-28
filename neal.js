@@ -1,7 +1,6 @@
 
-function dynamicShow(q){
+function dynamicShow(questions){
     var self = this;
-    var questions  = q;
     var index = 0;
 
     this.next = function(){
