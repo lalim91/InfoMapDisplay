@@ -1,10 +1,10 @@
 "use strict";
 
-var model = new model();
-var view = new view();
-var controller = new controller();
+var model = new Model();
+var view = new View();
+var controller = new Controller();
 
-function model() {
+function Model() {
     this.listOfQuestions = [{
         question: "Do you like to see and interact with your web page?",
         weight: 80,
@@ -36,14 +36,14 @@ function model() {
         path: "back",
         answer: null}
     ];
-    this.currentQuestion;
+    this.currentQuestion = null;
     this.frontEnd = 0;
     this.backEnd = 0;
     this.index = 0;
 
 }
 
-function view() {
+function View() {
     var self = this;
 
     this.showNewQuestion = function(){
@@ -76,7 +76,7 @@ function view() {
     };
 }
 
-function controller() {
+function Controller() {
     this.addToPath = function (question) {
         if (question.path === "front") {
             if (question.answer === "yes") {
@@ -101,7 +101,6 @@ $(document).ready(function() {
     view.showNewQuestion();
 
     $('#next').click(function() {
-        console.log(model.currentQuestion);
         if(model.currentQuestion) {
             model.currentQuestion.answer = $('input[name=optradio]:checked').val();
             controller.addToPath(model.listOfQuestions[model.index]);
