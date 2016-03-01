@@ -14,7 +14,7 @@ function quizGenerator (){
 
     function pushQuestion (){
         questionArray.push(this);
-    }
+    };
 }
 
 var quiz = new quizGenerator();
