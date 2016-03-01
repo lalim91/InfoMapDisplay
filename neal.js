@@ -34,5 +34,4 @@ function clickAnswer(){
         cur.answer = $('input[name=optradio]:checked').val();
         quizshow.next();
     }
-
 }

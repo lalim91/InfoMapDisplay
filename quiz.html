@@ -14,38 +14,41 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
 
     <!--Style Sheets-->
     <link href="style.css" type="text/css" rel="stylesheet"/>
 
     <!--JS Scripts-->
     <script src="script.js"></script>
-    <script src="neal.js"></script>
+    <script src="main.js"></script>
 </head>
 <body id="quizBody">
     <div class="container-fluid text-center">
         <div class="row content">
             <div class="col-sm-3 sidenav"></div>
             <div id='quizMain' class="col-sm-6">
-                <div id='quizSection'>
-                    <span id="quizQuestion"></span>
-                    <div class="container">
-                        <form>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="yes">Yes
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="meh">Meh
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="no">No
-                            </label>
-                        </form>
-                    </div>
+
+                <div id='quizSection container' id="radio">
+
+                    <div id="quizQuestion"></div>
+                    <form>
+                        <label class="radio-inline">
+                            <input value="yes" type="radio" name="optradio">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input value="meh" type="radio" name="optradio">Meh
+                        </label>
+                        <label class="radio-inline">
+                            <input value="no" type="radio" name="optradio">No
+                        </label>
+                    </form>
+
+                    <button id='next' type="button" class="btn btn-small btn-info">Next</button>
+
                 </div>
             </div>
-            <div class="col-sm-3 sidenav"></div>
+            <div class="col-sm-3 sidenav">
+            </div>
         </div>
     </div>
 </body>
