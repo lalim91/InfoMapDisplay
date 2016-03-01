@@ -14,32 +14,32 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
 
     <!--Style Sheets-->
     <link href="style.css" type="text/css" rel="stylesheet"/>
 
     <!--JS Scripts-->
     <script src="script.js"></script>
-    <script src="neal.js"></script>
+    <script src="main.js"></script>
 </head>
 <body id="quizBody">
     <div class="container-fluid text-center">
         <div class="row content">
             <div class="col-sm-3 sidenav"></div>
             <div id='quizMain' class="col-sm-6">
+
                 <div id='quizSection container' id="radio">
 
                     <div id="quizQuestion"></div>
                     <form>
                         <label class="radio-inline">
-                            <input type="radio" name="optradio">Yes
+                            <input value="yes" type="radio" name="optradio">Yes
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="optradio">Meh
+                            <input value="meh" type="radio" name="optradio">Meh
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="optradio">No
+                            <input value="no" type="radio" name="optradio">No
                         </label>
                     </form>
 

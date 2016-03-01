@@ -46,7 +46,7 @@ img{
     /*color:white;*/
 }
 #quizQuestion > div {
-    height: 5vh;
+    height: 15vh;
     font-size: 3vh;
     font-family:"Arial Narrow";
 }

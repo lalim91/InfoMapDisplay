@@ -29,5 +29,9 @@ var dummy = [{question: "do you like dan", weight: 50, path: "front", answer: nu
 var quizshow = new dynamicShow(questionArray);
 
 function clickAnswer(){
-
+    var cur = quizshow.current();
+    if(cur){
+        cur.answer = $('input[name=optradio]:checked').val();
+        quizshow.next();
+    }
 }
