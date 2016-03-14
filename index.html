@@ -15,25 +15,16 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
     <!--Style Sheets-->
     <link href="style.css" type="text/css" rel="stylesheet"/>
 
     <!--JS Scripts-->
-    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+
 </head>
-<body>
-    <div id="main_content">
-        <div class="col-xs-offset-2 col-xs-6" id="quiz">
-            <p>Front End or Back End?</p>
-            <p>Take the Quiz!</p>
-            <a href="quiz.html"><button class="btn btn-success"> On to the Quiz!</button></a>
-            <button class="btn btn-danger">I Honestly Don't Care</button>
-        </div>
-        <div class="col-xs-4">
-            <img src="images/angularjs.png" alt="angular">
-            <img src="images/php.png" alt="php">
-        </div>
-    </div>
+<body ng-app="quizApp">
+    <div ng-view></div>
 </body>
+<script src="main.js"></script>
 </html>

@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>Back or Front</title>
-
-    <!--JQuery Library-->
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <!--Style Sheets-->
-    <link href="style.css" type="text/css" rel="stylesheet"/>
-
-    <!--JS Scripts-->
-    <script src="script.js"></script>
-    <script src="main.js"></script>
-</head>
-<body id="quizBody">
+<div id="quizBody">
     <div class="container-fluid text-center">
         <div class="row content">
             <div class="col-sm-3 sidenav"></div>
@@ -30,7 +6,7 @@
 
                 <div id='quizSection container' id="radio">
 
-                    <div id="quizQuestion"></div>
+                    <div  ng-bind="qc.currentQ" id="quizQuestion"></div>
                     <form>
                         <label class="radio-inline">
                             <input value="yes" type="radio" name="optradio">Yes
@@ -43,7 +19,7 @@
                         </label>
                     </form>
 
-                    <button id='next' type="button" class="btn btn-small btn-info">Next</button>
+                    <button id='next' ng-click="qc.nextQuestion()" type="button" class="btn btn-small btn-info">Next</button>
 
                 </div>
             </div>
@@ -51,5 +27,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+    </div>
