@@ -1,4 +1,4 @@
-"use strict";
+ "use strict";
 
 var model = new model();
 var view = new view();
@@ -41,6 +41,13 @@ function model() {
     this.backEnd = 0;
     this.index = 0;
 
+    app.directive('myResult', function(){
+        return{
+            restrict: 'E',
+            templateUrl: "result.html",
+            scope:true
+        };
+    });
 }
 
 function view() {
