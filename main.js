@@ -24,10 +24,11 @@
                  restrict: 'E',
                  templateUrl: "result.html",
                  scope:true,
-                 controller: function(resultService){
+                 controller: function(resultsService){
                    this.outcome={
-                       side:resultsService.result,
-                       description:resultService.description
+                       side: resultsService.results,
+                       description: resultsService.description,
+                       image: resultsService.image
                    }
 
                  },
@@ -75,6 +76,7 @@
         .service("resultsService", function(){
             this.results = "";
             this.description = "";
+            this.image = "";
 
         })
 
@@ -93,17 +95,19 @@
                 else {
                     qServ.currentQuestion = null;
                     if (qServ.backEnd > qServ.frontEnd){
-                        this.currentQ ="You should pick this backEnd!";
+                        resultsService.description ="You should pick this backEnd!";
                         resultsService.results = "back";
+                        resultsService.image = "images/Dan.png";
                         window.location.href= '#results';
                     }
                     else if (qServ.backEnd < qServ.frontEnd){
-                        this.currentQ = "You should pick this frontEnd!";
+                        resultsService.description = "You should pick this frontEnd!";
                         resultsService.results = "front";
+                        resultsService.image = "images/Dan.png";
                         window.location.href= '#results';
                     }
                     else{
-                        this.currentQ = "Just Walk!";
+                        resultsService.description = "Just Walk!";
                         resultsService.results = "none";
                         window.location.href= '#results';
                     }
