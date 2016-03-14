@@ -22,15 +22,13 @@
              return{
                  restrict: 'E',
                  templateUrl: "result.html",
-                 scope:true
+                 scope:true,
+                 link: function(scope, elem, attr){
+
+                 }
              };
          })
-
-
         .service("qServ", function(){
-
-
-
 
             this.listOfQuestions = [{
                 question: "Do you like to see and interact with your web page?",
@@ -112,9 +110,9 @@
                         qServ.frontEnd += question.weight;
                     }
                 }
-            }
+            };
             this.nextQuestion = function(){
-                console.log("curret: ", self.currentQ , qServ.currentQuestion);
+                console.log("current: ", self.currentQ , qServ.currentQuestion);
                 if(qServ.currentQuestion) {
                     qServ.currentQuestion.answer = $('input[name=optradio]:checked').val();
                     self.addToPath(qServ.listOfQuestions[qServ.index]);
