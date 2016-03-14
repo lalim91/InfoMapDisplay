@@ -23,15 +23,18 @@
              return{
                  restrict: 'E',
                  templateUrl: "result.html",
-                 scope:true
+                 scope:true,
+                 controller: function(resultService){
+                   this.outcome={
+                       side:resultsService.result,
+                       description:resultService.description
+                   }
+
+                 },
+                 controllerAs:'rc'
              };
          })
-
-
         .service("qServ", function(){
-
-
-
 
             this.listOfQuestions = [{
                 question: "Do you like to see and interact with your web page?",
@@ -126,6 +129,10 @@
                 }
             };
             this.nextQuestion = function(){
+
+                console.log("current: ", self.currentQ , qServ.currentQuestion);
+
+
                 if(qServ.currentQuestion) {
                     qServ.currentQuestion.answer = $('input[name=optradio]:checked').val();
                     self.addToPath(qServ.listOfQuestions[qServ.index]);
