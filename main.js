@@ -1,4 +1,4 @@
-"use strict";
+ "use strict";
 
     angular.module("quizApp", ['ngRoute'])
         .config(function($routeProvider){
@@ -18,8 +18,19 @@
                     redirectTo: '/home'
                 })
         })
+        .directive('myResult', function(){
+             return{
+                 restrict: 'E',
+                 templateUrl: "result.html",
+                 scope:true
+             };
+         })
+
 
         .service("qServ", function(){
+
+
+
 
             this.listOfQuestions = [{
                 question: "Do you like to see and interact with your web page?",
@@ -57,6 +68,7 @@
             this.backEnd = 0;
             this.index = 0;
         })
+
 
         .controller('quizController', function (qServ) {
             //this.test = qServ.listOfQuestions[2].question;
