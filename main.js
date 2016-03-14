@@ -1,5 +1,4 @@
 "use strict";
-
     angular.module("quizApp", ['ngRoute'])
         .config(function($routeProvider){
             $routeProvider
@@ -82,7 +81,6 @@
                 }
             };
 
-
             this.addToPath = function (question) {
                 if (question.path === "front") {
                     if (question.answer === "yes") {
@@ -100,13 +98,13 @@
                         qServ.frontEnd += question.weight;
                     }
                 }
-            }
+            };
             this.nextQuestion = function(){
-                console.log("curret: ", self.currentQ , qServ.currentQuestion);
                 if(qServ.currentQuestion) {
                     qServ.currentQuestion.answer = $('input[name=optradio]:checked').val();
                     self.addToPath(qServ.listOfQuestions[qServ.index]);
                     qServ.index++;
+                    $('input[name=optradio]').attr('checked',false);
                     self.showNewQuestion();
                 }
                 else{
