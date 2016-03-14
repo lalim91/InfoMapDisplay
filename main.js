@@ -82,6 +82,7 @@
             this.currentQ = qServ.currentQuestion;
             this.showNewQuestion = function(){
                 console.log("new question");
+
                 if (qServ.index < qServ.listOfQuestions.length) {
                     qServ.currentQuestion = qServ.listOfQuestions[qServ.index];
                     this.currentQ = qServ.currentQuestion.question;
@@ -90,14 +91,17 @@
                     qServ.currentQuestion = null;
                     if (qServ.backEnd > qServ.frontEnd){
                         this.currentQ ="You should pick this backEnd!";
+                        resultsService.results = "back";
                         window.location.href= '#results';
                     }
                     else if (qServ.backEnd < qServ.frontEnd){
                         this.currentQ = "You should pick this frontEnd!";
+                        resultsService.results = "front";
                         window.location.href= '#results';
                     }
                     else{
                         this.currentQ = "Just Walk!";
+                        resultsService.results = "none";
                         window.location.href= '#results';
                     }
                 }
