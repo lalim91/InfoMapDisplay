@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="col-sm-offset-1 col-sm-6">
+        <my-result></my-result>
+
+        <h1 ng-show="path">{{ result }}</h1>
+        <p ng-show="path">{{ description }}</p>
+        <h1 ng-hide="path">{{ result }}</h1>
+        <p ng-hide="path">{{ description }}</p>
+    </div>
+    <div class="col-sm-4">
+        <img ng-src="{{ instructor }}">
+    </div>
+
+</div>

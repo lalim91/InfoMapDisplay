@@ -1,4 +1,6 @@
+
 "use strict";
+
     angular.module("quizApp", ['ngRoute'])
         .config(function($routeProvider){
             $routeProvider
@@ -17,8 +19,19 @@
                     redirectTo: '/home'
                 })
         })
+        .directive('myResult', function(){
+             return{
+                 restrict: 'E',
+                 templateUrl: "result.html",
+                 scope:true
+             };
+         })
+
 
         .service("qServ", function(){
+
+
+
 
             this.listOfQuestions = [{
                 question: "Do you like to see and interact with your web page?",
@@ -56,8 +69,14 @@
             this.backEnd = 0;
             this.index = 0;
         })
+        .service("resultsService", function(){
+            this.results = "";
+            this.description = "";
 
-        .controller('quizController', function (qServ) {
+        })
+
+
+        .controller('quizController', function ($location, qServ, resultsService) {
             //this.test = qServ.listOfQuestions[2].question;
             var self = this;
             this.currentQ = qServ.currentQuestion;
@@ -71,12 +90,15 @@
                     qServ.currentQuestion = null;
                     if (qServ.backEnd > qServ.frontEnd){
                         this.currentQ ="You should pick this backEnd!";
+                        window.location.href= '#results';
                     }
                     else if (qServ.backEnd < qServ.frontEnd){
                         this.currentQ = "You should pick this frontEnd!";
+                        window.location.href= '#results';
                     }
                     else{
                         this.currentQ = "Just Walk!";
+                        window.location.href= '#results';
                     }
                 }
             };
