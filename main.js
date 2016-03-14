@@ -1,4 +1,5 @@
- "use strict";
+
+"use strict";
 
     angular.module("quizApp", ['ngRoute'])
         .config(function($routeProvider){
@@ -66,9 +67,14 @@
             this.backEnd = 0;
             this.index = 0;
         })
+        .service("resultsService", function(){
+            this.results = "";
+            this.description = "";
+
+        })
 
 
-        .controller('quizController', function (qServ) {
+        .controller('quizController', function ($location, qServ, resultsService) {
             //this.test = qServ.listOfQuestions[2].question;
             var self = this;
             this.currentQ = qServ.currentQuestion;
@@ -82,16 +88,18 @@
                     qServ.currentQuestion = null;
                     if (qServ.backEnd > qServ.frontEnd){
                         this.currentQ ="You should pick this backEnd!";
+                        window.location.href= '#results';
                     }
                     else if (qServ.backEnd < qServ.frontEnd){
                         this.currentQ = "You should pick this frontEnd!";
+                        window.location.href= '#results';
                     }
                     else{
                         this.currentQ = "Just Walk!";
+                        window.location.href= '#results';
                     }
                 }
             };
-
 
             this.addToPath = function (question) {
                 if (question.path === "front") {
@@ -112,11 +120,15 @@
                 }
             };
             this.nextQuestion = function(){
+
                 console.log("current: ", self.currentQ , qServ.currentQuestion);
+
+
                 if(qServ.currentQuestion) {
                     qServ.currentQuestion.answer = $('input[name=optradio]:checked').val();
                     self.addToPath(qServ.listOfQuestions[qServ.index]);
                     qServ.index++;
+                    $('input[name=optradio]').attr('checked',false);
                     self.showNewQuestion();
                 }
                 else{
