@@ -1,4 +1,7 @@
 <div>
-    <h1>{{ side }}</h1>
-    <p>{{ description }}</p>
+    <h1>{{ rc.outcome.side }}</h1>
+    <p>{{ rc.outcome.description }}</p>
+    <div class="col-sm-4">
+        <img ng-src="{{ rc.outcome.image }}">
+    </div>
 </div>
