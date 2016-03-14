@@ -24,9 +24,14 @@
                  restrict: 'E',
                  templateUrl: "result.html",
                  scope:true,
-                 link: function(scope, elem, attr){
+                 controller: function(resultService){
+                   this.outcome={
+                       side:resultsService.result,
+                       description:resultService.description
+                   }
 
-                 }
+                 },
+                 controllerAs:'rc'
              };
          })
         .service("qServ", function(){
