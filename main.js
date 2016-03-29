@@ -1,10 +1,11 @@
 "use strict";
-
 angular.module("quizApp", ['ngRoute'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/home', {
-                templateUrl: 'splash.html'
+                templateUrl: 'splash.html',
+                controller:'splashController',
+                controllerAs:'sc'
             })
             .when('/quiz', {
                 templateUrl: 'quiz.html',
@@ -29,7 +30,6 @@ angular.module("quizApp", ['ngRoute'])
                     description: resultsService.description,
                     image: resultsService.image
                 }
-
             },
             controllerAs: 'rc'
         };
@@ -175,5 +175,25 @@ angular.module("quizApp", ['ngRoute'])
             else {
                 self.showNewQuestion();
             }
+        }
+    })
+
+
+    .controller('splashController', function ($location, qServ, resultsService){
+        this.coinFlip= function(){
+            var z = Math.floor(Math.random()*2);
+            if (z == 0){
+                resultsService.description ="You should pick this backEnd!";
+                resultsService.results = "back";
+                resultsService.image = "images/Dan.png";
+                window.location.href= '#results';
+            }else if (z == 1){
+                resultsService.description = "You should pick this frontEnd!";
+                resultsService.results = "front";
+                resultsService.image = "images/Eric.png";
+                window.location.href= '#results';
+            }
+
+
         }
     });
