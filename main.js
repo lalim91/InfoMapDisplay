@@ -36,39 +36,45 @@ angular.module("quizApp", ['ngRoute'])
     })
     .service("qServ", function () {
 
-        this.listOfQuestions = [{
-            question: "Do you like to see and interact with your web page?",
-            weight: 80,
-            path: "front",
-            answer: null
-        },
+        this.listOfQuestions = [
             {
-                question: "Do enjoy styling web pages?",
-                weight: 50,
+                question: "I like to see and interact with my app",
+                weight: 60,
                 path: "front",
                 answer: null
-            },
-            {
-                question: "Do you care about the user's experience with web page?",
-                weight: 50,
+            }, {
+                question: "The app works, I don't care how it looks.",
+                weight: 90,
+                path: "back",
+                answer: null
+            }, {
+                question: "I enjoy styling my web pages to look and feel better.",
+                weight: 80,
                 path: "front",
                 answer: null
-            },
-            {
-                question: "Do you hate HTML?",
+            }, {
+                question: "I never want to use bootstrap again",
                 weight: 50,
                 path: "back",
                 answer: null
-            },
-            {
-                question: "Do you hate bootstrap",
+            }, {
+                question: "I care about the user's experience with my app.",
                 weight: 50,
+                path: "front",
+                answer: null
+            }, {
+                question: "I just want to write functions and let someone else implement them.",
+                weight: 70,
                 path: "back",
                 answer: null
-            },
-            {
-                question: "Do you think DOM creation sucks ass?",
-                weight: 50,
+            }, {
+                question: "My app have to look real good. REAL GOOD.",
+                weight: 70,
+                path: "front",
+                answer: null
+            }, {
+                question: "I want to make my own database",
+                weight: 100,
                 path: "back",
                 answer: null
             }
