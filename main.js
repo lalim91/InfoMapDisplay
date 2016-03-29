@@ -103,7 +103,7 @@
                     else if (qServ.backEnd < qServ.frontEnd){
                         resultsService.description = "You should pick this frontEnd!";
                         resultsService.results = "front";
-                        resultsService.image = "images/Dan.png";
+                        resultsService.image = "images/Eric.png";
                         window.location.href= '#results';
                     }
                     else{
