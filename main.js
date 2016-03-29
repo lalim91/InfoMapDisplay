@@ -5,7 +5,9 @@
         .config(function($routeProvider){
             $routeProvider
                 .when('/home', {
-                    templateUrl: 'splash.html'
+                    templateUrl: 'splash.html',
+                    controller: 'quizController',
+                    controllerAs: "qc"
                 })
                 .when('/quiz', {
                     templateUrl: 'quiz.html',
