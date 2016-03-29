@@ -90,6 +90,10 @@ angular.module("quizApp", ['ngRoute'])
         //this.test = qServ.listOfQuestions[2].question;
         var self = this;
         this.currentQ = qServ.currentQuestion;
+        this.frontEnd = qServ.frontEnd;
+        this.backEnd = qServ.backEnd;
+
+
         this.showNewQuestion = function () {
             console.log("new question");
 
@@ -125,26 +129,30 @@ angular.module("quizApp", ['ngRoute'])
                     qServ.frontEnd += question.weight;
                 }
                 else if (question.answer === "Agree") {
-                    qServ.backEnd += question.weight;
-                }
-                else if (question.answer === "Neutral") {
-                    qServ.backEnd += question.weight;
+                    qServ.frontEnd += (question.weight / 2);
                 }
                 else if (question.answer === "Disagree") {
-                    qServ.backEnd += question.weight;
+                    qServ.backEnd += (question.weight / 2);
                 }
                 else if (question.answer === "Strongly Disagree") {
                     qServ.backEnd += question.weight;
                 }
             }
             else if (question.path === "back") {
-                if (question.answer === "yes") {
+                if (question.answer === "Strongly Agree") {
                     qServ.backEnd += question.weight;
                 }
-                else if (question.answer === "no") {
+                else if (question.answer === "Agree") {
+                    qServ.backEnd += (question.weight / 2);
+                }
+                else if (question.answer === "Disagree") {
+                    qServ.frontEnd += (question.weight / 2);
+                }
+                else if (question.answer === "Strongly Disagree") {
                     qServ.frontEnd += question.weight;
                 }
             }
+            console.log("Front:", qServ.frontEnd, "Back:", qServ.backEnd);
         };
         this.nextQuestion = function () {
 
